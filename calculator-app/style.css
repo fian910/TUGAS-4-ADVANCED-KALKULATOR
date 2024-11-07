@@ -33,7 +33,11 @@ body {
   border-radius: 15px;
   margin-bottom: 10px;
   word-break: break-all;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  text-shadow: 0 0 5px #0ff;
 }
+
 
 .buttons {
   display: grid;
@@ -51,7 +55,10 @@ body {
   height: 60px;
   aspect-ratio: 1;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+  text-shadow: 0 0 5px currentColor;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .button[data-value="AC"] {
@@ -62,18 +69,37 @@ body {
 /* Warna tombol */
 .button.operation {
   background-color: #ff9500;
-  color: #fff;
+  color: #00ccff;
+  text-shadow: 0 0 5px #ff9500;
+  box-shadow: 0 0 10px rgba(255, 149, 0, 0.3);
+}
+
+.button.operation:hover {
+  box-shadow: 0 0 20px rgba(255, 149, 0, 0.6);
 }
 
 .button.number {
   background-color: #333;
-  color: #fff;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.button.number:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
 }
 
 .button.special {
   background-color: #a5a5a5;
-  color: #000;
+  color: #f0f;
+  text-shadow: 0 0 5px #f0f;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
 }
+
+.button.special:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+}
+
 
 .button:active {
   background-color: #666 !important;
@@ -136,6 +162,7 @@ body.light {
   color: #ff9500;
 }
 
+
 /* Media Query untuk Layar Lebih Kecil */
 @media (max-width: 480px) {
   .calculator {
@@ -167,4 +194,10 @@ body.light {
     font-size: 1em;
     height: 45px;
   }
+}
+
+.button:hover {
+  box-shadow: 0 0 15px currentColor;
+  text-shadow: 0 0 8px currentColor;
+  border-color: currentColor;
 }
